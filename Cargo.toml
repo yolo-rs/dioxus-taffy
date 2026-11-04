@@ -97,10 +97,6 @@ taffy_test_helpers = { path = "tests/common"}
 # Enable default features for tests and examples
 taffy = { path = ".", features = ["parse"] }
 
-[profile.release]
-lto = true
-panic = 'abort'
-
 [[bench]]
 name = "dummy_benchmark"
 path = "benches/dummy_benchmark.rs"
@@ -111,14 +107,3 @@ name = "basic"
 # This causes all the examples to be scraped for documentation, not just the basic example
 doc-scrape-examples = true
 
-[workspace]
-members = [
-    "scripts/gentest",
-    "scripts/getchrome",
-    "scripts/format-fixtures",
-    "scripts/import-yoga-tests",
-    "tests/common",
-]
-# The Parley example and benches are excluded from the workspace as their dependencies require a newer
-# Rust version than Taffy's MSRV
-exclude = ["examples/parley", "benches"]
