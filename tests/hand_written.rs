@@ -1,3 +1,6 @@
+// Each test file wraps its tests in a module of its own name.
+#![allow(clippy::module_inception)]
+
 mod hand_written {
     mod absolute_replaced;
     mod adversarial_styles;
