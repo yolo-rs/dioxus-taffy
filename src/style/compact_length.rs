@@ -170,7 +170,7 @@ mod inner {
         /// Construct a `CompactLengthInner` from only a tag
         #[inline(always)]
         pub(super) const fn from_tag(tag: usize) -> Self {
-            Self { ptr: 0 as *const (), tag }
+            Self { ptr: core::ptr::null(), tag }
         }
 
         /// Get the calc tag (low 3 bits)
